@@ -1,5 +1,6 @@
 package com.example.myfirstactivity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -18,6 +19,7 @@ class ShopActivity:AppCompatActivity() {
         const val STATE = "STATE"
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,97 +29,68 @@ class ShopActivity:AppCompatActivity() {
 
         val backButton = findViewById<ImageView>(R.id.backbutton)
 
-//        val imageView = findViewById<ImageView>(R.id.imageView);
-        val internetUrl = "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/7b/58/c2/7b58c21a-2b51-2bb2-e59a-9bb9b96ad8c3/00602567924166.rgb.jpg/100x100bb.jpg";
+        val imageView1 = findViewById<ImageView>(R.id.imageView1);
+        val imageView2 = findViewById<ImageView>(R.id.imageView2);
+        val imageView3 = findViewById<ImageView>(R.id.imageView3);
+        val imageView4 = findViewById<ImageView>(R.id.imageView4);
+        val imageView5 = findViewById<ImageView>(R.id.imageView5);
+        val imageView6 = findViewById<ImageView>(R.id.imageView6);
+        val imageView7 = findViewById<ImageView>(R.id.imageView7);
+        val imageView8 = findViewById<ImageView>(R.id.imageView8);
+
+        val internetUrl1 = "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/7b/58/c2/7b58c21a-2b51-2bb2-e59a-9bb9b96ad8c3/00602567924166.rgb.jpg/100x100bb.jpg";
+        val internetUrl2 = "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/7b/58/c2/7b58c21a-2b51-2bb2-e59a-9bb9b96ad8c3/00602567924166.rgb.jpg/100x100bb.jpg";
+        val internetUrl3 = "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/0d/3a/07/0d3a0762-c8d4-8bb4-aab6-8eee51059c82/mzi.wbhxtnxx.jpg/100x100bb.jpg";
+        val internetUrl4 = "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/7b/58/c2/7b58c21a-2b51-2bb2-e59a-9bb9b96ad8c3/00602567924166.rgb.jpg/100x100bb.jpg";
+        val internetUrl5 = "https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/de/8a/27/de8a2743-c4f6-9932-5d66-337d7d3ee660/886444533638.jpg/100x100bb.jpg";
+        val internetUrl6 = "https://is4-ssl.mzstatic.com/image/thumb/Music4/v4/a9/2f/ca/a92fcaa8-1025-0daa-b97d-19a185e743d5/cover.jpg/100x100bb.jpg";
+        val internetUrl7 = "https://is4-ssl.mzstatic.com/image/thumb/Music126/v4/8d/f7/94/8df7941f-b089-7d97-1348-7b55f026aed6/d5ad91de-de10-4ee6-89a1-340d6c775443.jpg/100x100bb.jpg";
+        val internetUrl8 = "https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/48/ef/06/48ef06c3-29e5-dc3a-2db9-7551db464b71/859706864559_cover.jpg/100x100bb.jpg";
+
 
         Glide.with(this)
-            .load(internetUrl)
-//            .into(imageView)
+            .load(internetUrl1)
+            .into(imageView1)
+
+        Glide.with(this)
+            .load(internetUrl2)
+            .into(imageView2)
+
+        Glide.with(this)
+            .load(internetUrl3)
+            .into(imageView3)
+
+        Glide.with(this)
+            .load(internetUrl4)
+            .into(imageView4)
+
+        Glide.with(this)
+            .load(internetUrl5)
+            .into(imageView5)
+
+        Glide.with(this)
+            .load(internetUrl6)
+            .into(imageView6)
+
+        Glide.with(this)
+            .load(internetUrl7)
+            .into(imageView7)
+
+        Glide.with(this)
+            .load(internetUrl8)
+            .into(imageView8)
 
 
-        backButton.setOnClickListener(){
+
+
+
+        backButton.setOnClickListener() {
             Log.d(STATE, "Выход с экрана")
-           finish()
-
+            finish()
 
 
         }
 
-
-
-        var finalCost = 0
-        val firstCost = findViewById<TextView>(R.id.firstCost)
-        val secondCost = findViewById<TextView>(R.id.secondCost)
-        val thirdCost = findViewById<TextView>(R.id.thirdCost)
-        val buyButton = findViewById<Button>(R.id.buyButton)
-
-
-
-        val firstItem = findViewById<MaterialButton>(R.id.firstItem)
-
-        firstItem.setOnClickListener(){
-            Toast.makeText(this, "Ебааа, ты купил конфета1", Toast.LENGTH_SHORT).show()
-
-            finalCost += firstCost.text.substring(0..2).toInt()
-            Log.d(STATE, "$finalCost")
-        }
-
-        val secondItem = findViewById<MaterialButton>(R.id.secondItem)
-
-        secondItem.setOnClickListener(){
-            Toast.makeText(this, "Ебааа, ты купил конфета2", Toast.LENGTH_SHORT).show()
-
-            finalCost += secondCost.text.substring(0..2).toInt()
-            Log.d(STATE, "$finalCost")
-
-        }
-
-        val thirdItem = findViewById<MaterialButton>(R.id.thirdItem)
-
-        thirdItem.setOnClickListener(){
-            Toast.makeText(this, "Ебааа, ты купил конфета3", Toast.LENGTH_SHORT).show()
-
-            finalCost += thirdCost.text.substring(0..2).toInt()
-            Log.d(STATE, "$finalCost")
-
-        }
-
-        var rubles:String
-
-
-
-        buyButton.setOnClickListener(){
-
-
-            Toast.makeText(this, "Ты должен ${rubblesCounting(finalCost)}", Toast.LENGTH_SHORT).show()
-            finalCost = 0
-        }
 
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(STATE, "Экран уничтожен")
-    }
-
-    override fun onResume() {
-        Log.d(STATE, "Возвращение на экран")
-        super.onResume()
-    }
-    fun rubblesCounting(cash: Int): String {
-        if (cash % 100 in 10..20) {
-            return "$cash рублей"
-        } else {
-            when (cash % 10) {
-                0 -> return "$cash рублей"
-                1 -> return "$cash рубль"
-                in 2..4 -> return "$cash рубля"
-                in 5..9 -> return "$cash рублей"
-
-            }
-        }
-        return ""
-    }
-
-
 }
