@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.android.material.button.MaterialButton
 
 class ShopActivity:AppCompatActivity() {
@@ -26,9 +27,20 @@ class ShopActivity:AppCompatActivity() {
 
         val backButton = findViewById<ImageView>(R.id.backbutton)
 
+//        val imageView = findViewById<ImageView>(R.id.imageView);
+        val internetUrl = "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/7b/58/c2/7b58c21a-2b51-2bb2-e59a-9bb9b96ad8c3/00602567924166.rgb.jpg/100x100bb.jpg";
+
+        Glide.with(this)
+            .load(internetUrl)
+//            .into(imageView)
+
+
         backButton.setOnClickListener(){
             Log.d(STATE, "Выход с экрана")
            finish()
+
+
+
         }
 
 
